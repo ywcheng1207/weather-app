@@ -1,5 +1,5 @@
 // library
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
 
@@ -30,6 +30,11 @@ const theme = {
     textColor: '#cccccc'
   }
 }
+
+// accu api
+const AUTHORIZATION_KEY = 'Vl4ShXFx793OuUPAtKGCYrwuWDwuxfAZ'
+const url =
+  'http://dataservice.accuweather.com/forecasts/v1/daily/1day/4-315078_1_AL'
 
 // style
 const Container = styled.div`
@@ -135,7 +140,8 @@ function App() {
     windSpeed: '1.1',
     temperature: 22.9,
     rainPossibility: 48.3,
-    observationTime: '2023-09-30T12:43:00+08:00'
+    observationTime: '2023-09-30T12:43:00+08:00',
+    isLoading: true
   })
 
   const handleTheme = () => () => {
@@ -143,6 +149,31 @@ function App() {
       ? setCurrentTheme('dark')
       : setCurrentTheme('light')
   }
+
+  const fetchCurrentWeather = () => {
+    setCurrentWeather((pre) => ({ ...pre, isLoading: true }))
+    fetch(
+      `${url}?apikey=${AUTHORIZATION_KEY}&details=true&metric=true&language=zh-tw`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        const forecastData = data.DailyForecasts[0]
+        const headLineData = data.Headline
+        setCurrentWeather({
+          locationName: '台北市',
+          description: headLineData.Text,
+          windSpeed: forecastData.Day.Wind.Speed.Value,
+          temperature: forecastData.Temperature.Maximum.Value,
+          rainPossibility: forecastData.Day.RainProbability,
+          observationTime: forecastData.Day.Date,
+          isLoading: false
+        })
+      })
+  }
+
+  useEffect(() => {
+    fetchCurrentWeather()
+  }, [])
 
   return (
     <ThemeProvider theme={theme[currentTheme]}>
@@ -171,7 +202,7 @@ function App() {
               hour: 'numeric',
               minute: 'numeric'
             }).format(dayjs(currentWeather.observationTime))}{' '}
-            <RefreshIcon />
+            <RefreshIcon onClick={() => fetchCurrentWeather()} />
           </Refresh>
         </WeatherCard>
       </Container>

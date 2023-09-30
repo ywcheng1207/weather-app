@@ -1,0 +1,280 @@
+{
+  "Headline": {
+    "EffectiveDate": "2023-10-01T13:00:00+08:00",
+    "EffectiveEpochDate": 1696136400,
+    "Severity": 5,
+    "Text": "週日下午至週日深夜預計有陣雨天氣",
+    "Category": "rain",
+    "EndDate": "2023-10-02T07:00:00+08:00",
+    "EndEpochDate": 1696201200,
+    "MobileLink": "http://www.accuweather.com/zh/tw/taipei-city/4-315078_1_al/daily-weather-forecast/4-315078_1_al?unit=c&lang=zh-tw",
+    "Link": "http://www.accuweather.com/zh/tw/taipei-city/4-315078_1_al/daily-weather-forecast/4-315078_1_al?unit=c&lang=zh-tw"
+  },
+  "DailyForecasts": [
+    {
+      "Date": "2023-09-30T07:00:00+08:00",
+      "EpochDate": 1696028400,
+      "Sun": {
+        "Rise": "2023-09-30T05:45:00+08:00",
+        "EpochRise": 1696023900,
+        "Set": "2023-09-30T17:43:00+08:00",
+        "EpochSet": 1696066980
+      },
+      "Moon": {
+        "Rise": "2023-09-30T18:22:00+08:00",
+        "EpochRise": 1696069320,
+        "Set": "2023-10-01T07:24:00+08:00",
+        "EpochSet": 1696116240,
+        "Phase": "WaningGibbous",
+        "Age": 15
+      },
+      "Temperature": {
+        "Minimum": {
+          "Value": 26.1,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 32.2,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "RealFeelTemperature": {
+        "Minimum": {
+          "Value": 28.9,
+          "Unit": "C",
+          "UnitType": 17,
+          "Phrase": "非常溫暖"
+        },
+        "Maximum": {
+          "Value": 37.8,
+          "Unit": "C",
+          "UnitType": 17,
+          "Phrase": "酷熱"
+        }
+      },
+      "RealFeelTemperatureShade": {
+        "Minimum": {
+          "Value": 28.9,
+          "Unit": "C",
+          "UnitType": 17,
+          "Phrase": "非常溫暖"
+        },
+        "Maximum": {
+          "Value": 36.1,
+          "Unit": "C",
+          "UnitType": 17,
+          "Phrase": "炎熱"
+        }
+      },
+      "HoursOfSun": 7.4,
+      "DegreeDaySummary": {
+        "Heating": {
+          "Value": 0,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Cooling": {
+          "Value": 11,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "AirAndPollen": [
+        {
+          "Name": "AirQuality",
+          "Value": 0,
+          "Category": "良好",
+          "CategoryValue": 1,
+          "Type": "臭氧"
+        },
+        {
+          "Name": "Grass",
+          "Value": 0,
+          "Category": "低",
+          "CategoryValue": 1
+        },
+        {
+          "Name": "Mold",
+          "Value": 0,
+          "Category": "低",
+          "CategoryValue": 1
+        },
+        {
+          "Name": "Tree",
+          "Value": 0,
+          "Category": "低",
+          "CategoryValue": 1
+        },
+        {
+          "Name": "Ragweed",
+          "Value": 0,
+          "Category": "低",
+          "CategoryValue": 1
+        },
+        {
+          "Name": "UVIndex",
+          "Value": 8,
+          "Category": "非常高",
+          "CategoryValue": 4
+        }
+      ],
+      "Day": {
+        "Icon": 2,
+        "IconPhrase": "晴時多雲",
+        "HasPrecipitation": false,
+        "LocalSource": {
+          "Id": 7,
+          "Name": "Huafeng",
+          "WeatherCode": "00"
+        },
+        "ShortPhrase": "晴轉晴時多雲",
+        "LongPhrase": "晴轉晴時多雲",
+        "PrecipitationProbability": 16,
+        "ThunderstormProbability": 4,
+        "RainProbability": 16,
+        "SnowProbability": 0,
+        "IceProbability": 0,
+        "Wind": {
+          "Speed": {
+            "Value": 20.9,
+            "Unit": "km/h",
+            "UnitType": 7
+          },
+          "Direction": {
+            "Degrees": 73,
+            "Localized": "東北東",
+            "English": "ENE"
+          }
+        },
+        "WindGust": {
+          "Speed": {
+            "Value": 59.5,
+            "Unit": "km/h",
+            "UnitType": 7
+          },
+          "Direction": {
+            "Degrees": 73,
+            "Localized": "東北東",
+            "English": "ENE"
+          }
+        },
+        "TotalLiquid": {
+          "Value": 0,
+          "Unit": "mm",
+          "UnitType": 3
+        },
+        "Rain": {
+          "Value": 0,
+          "Unit": "mm",
+          "UnitType": 3
+        },
+        "Snow": {
+          "Value": 0,
+          "Unit": "cm",
+          "UnitType": 4
+        },
+        "Ice": {
+          "Value": 0,
+          "Unit": "mm",
+          "UnitType": 3
+        },
+        "HoursOfPrecipitation": 0,
+        "HoursOfRain": 0,
+        "HoursOfSnow": 0,
+        "HoursOfIce": 0,
+        "CloudCover": 30,
+        "Evapotranspiration": {
+          "Value": 4.1,
+          "Unit": "mm",
+          "UnitType": 3
+        },
+        "SolarIrradiance": {
+          "Value": 8390.8,
+          "Unit": "W/m²",
+          "UnitType": 33
+        }
+      },
+      "Night": {
+        "Icon": 35,
+        "IconPhrase": "多雲時陰",
+        "HasPrecipitation": false,
+        "LocalSource": {
+          "Id": 7,
+          "Name": "Huafeng",
+          "WeatherCode": "00"
+        },
+        "ShortPhrase": "多雲時陰",
+        "LongPhrase": "多雲時陰",
+        "PrecipitationProbability": 5,
+        "ThunderstormProbability": 0,
+        "RainProbability": 5,
+        "SnowProbability": 0,
+        "IceProbability": 0,
+        "Wind": {
+          "Speed": {
+            "Value": 14.5,
+            "Unit": "km/h",
+            "UnitType": 7
+          },
+          "Direction": {
+            "Degrees": 81,
+            "Localized": "東",
+            "English": "E"
+          }
+        },
+        "WindGust": {
+          "Speed": {
+            "Value": 35.4,
+            "Unit": "km/h",
+            "UnitType": 7
+          },
+          "Direction": {
+            "Degrees": 81,
+            "Localized": "東",
+            "English": "E"
+          }
+        },
+        "TotalLiquid": {
+          "Value": 0,
+          "Unit": "mm",
+          "UnitType": 3
+        },
+        "Rain": {
+          "Value": 0,
+          "Unit": "mm",
+          "UnitType": 3
+        },
+        "Snow": {
+          "Value": 0,
+          "Unit": "cm",
+          "UnitType": 4
+        },
+        "Ice": {
+          "Value": 0,
+          "Unit": "mm",
+          "UnitType": 3
+        },
+        "HoursOfPrecipitation": 0,
+        "HoursOfRain": 0,
+        "HoursOfSnow": 0,
+        "HoursOfIce": 0,
+        "CloudCover": 31,
+        "Evapotranspiration": {
+          "Value": 0.5,
+          "Unit": "mm",
+          "UnitType": 3
+        },
+        "SolarIrradiance": {
+          "Value": 47.9,
+          "Unit": "W/m²",
+          "UnitType": 33
+        }
+      },
+      "Sources": ["AccuWeather", "華風氣象傳媒"],
+      "MobileLink": "http://www.accuweather.com/zh/tw/taipei-city/4-315078_1_al/daily-weather-forecast/4-315078_1_al?day=1&unit=c&lang=zh-tw",
+      "Link": "http://www.accuweather.com/zh/tw/taipei-city/4-315078_1_al/daily-weather-forecast/4-315078_1_al?day=1&unit=c&lang=zh-tw"
+    }
+  ]
+}
