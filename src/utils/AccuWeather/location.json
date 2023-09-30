@@ -1,0 +1,216 @@
+[
+  {
+    "Version": 1,
+    "Key": "4-315078_1_AL",
+    "Type": "City",
+    "Rank": 20,
+    "LocalizedName": "Taipei",
+    "EnglishName": "Taipei City",
+    "PrimaryPostalCode": "",
+    "Region": {
+      "ID": "ASI",
+      "LocalizedName": "Asia",
+      "EnglishName": "Asia"
+    },
+    "Country": {
+      "ID": "TW",
+      "LocalizedName": "Taiwan",
+      "EnglishName": "Taiwan"
+    },
+    "AdministrativeArea": {
+      "ID": "TPE",
+      "LocalizedName": "Taipei City",
+      "EnglishName": "Taipei City",
+      "Level": 1,
+      "LocalizedType": "Special Municipality",
+      "EnglishType": "Special Municipality",
+      "CountryID": "TW"
+    },
+    "TimeZone": {
+      "Code": "CST",
+      "Name": "Asia/Taipei",
+      "GmtOffset": 8,
+      "IsDaylightSaving": false,
+      "NextOffsetChange": null
+    },
+    "GeoPosition": {
+      "Latitude": 25.048,
+      "Longitude": 121.514,
+      "Elevation": {
+        "Metric": {
+          "Value": 8,
+          "Unit": "m",
+          "UnitType": 5
+        },
+        "Imperial": {
+          "Value": 26,
+          "Unit": "ft",
+          "UnitType": 0
+        }
+      }
+    },
+    "IsAlias": true,
+    "ParentCity": {
+      "Key": "315078",
+      "LocalizedName": "Taipei City",
+      "EnglishName": "Taipei City"
+    },
+    "SupplementalAdminAreas": [],
+    "DataSets": [
+      "AirQuality",
+      "AirQualityCurrentConditions",
+      "AirQualityForecasts",
+      "Alerts",
+      "FutureRadar",
+      "MinuteCast",
+      "PremiumAirQuality",
+      "TidalForecast"
+    ]
+  },
+  {
+    "Version": 1,
+    "Key": "2587880",
+    "Type": "City",
+    "Rank": 55,
+    "LocalizedName": "Shuangyang Subdistrict",
+    "EnglishName": "Shuangyang Subdistrict",
+    "PrimaryPostalCode": "",
+    "Region": {
+      "ID": "ASI",
+      "LocalizedName": "Asia",
+      "EnglishName": "Asia"
+    },
+    "Country": {
+      "ID": "CN",
+      "LocalizedName": "China",
+      "EnglishName": "China"
+    },
+    "AdministrativeArea": {
+      "ID": "FJ",
+      "LocalizedName": "Fujian",
+      "EnglishName": "Fujian",
+      "Level": 1,
+      "LocalizedType": "Province",
+      "EnglishType": "Province",
+      "CountryID": "CN"
+    },
+    "TimeZone": {
+      "Code": "CST",
+      "Name": "Asia/Shanghai",
+      "GmtOffset": 8,
+      "IsDaylightSaving": false,
+      "NextOffsetChange": null
+    },
+    "GeoPosition": {
+      "Latitude": 24.996,
+      "Longitude": 118.615,
+      "Elevation": {
+        "Metric": {
+          "Value": 22,
+          "Unit": "m",
+          "UnitType": 5
+        },
+        "Imperial": {
+          "Value": 72,
+          "Unit": "ft",
+          "UnitType": 0
+        }
+      }
+    },
+    "IsAlias": false,
+    "ParentCity": {
+      "Key": "2332527",
+      "LocalizedName": "Luojiang District",
+      "EnglishName": "Luojiang District"
+    },
+    "SupplementalAdminAreas": [
+      {
+        "Level": 2,
+        "LocalizedName": "Quanzhou",
+        "EnglishName": "Quanzhou"
+      }
+    ],
+    "DataSets": [
+      "AirQuality",
+      "AirQualityCurrentConditions",
+      "AirQualityForecasts",
+      "Alerts",
+      "DailyAirQualityForecast",
+      "DailyLocalIndices",
+      "FutureRadar",
+      "MinuteCast",
+      "PremiumAirQuality"
+    ]
+  },
+  {
+    "Version": 1,
+    "Key": "3490796",
+    "Type": "City",
+    "Rank": 85,
+    "LocalizedName": "Haizhouwan Subdistrict",
+    "EnglishName": "Haizhouwan Subdistrict",
+    "PrimaryPostalCode": "",
+    "Region": {
+      "ID": "ASI",
+      "LocalizedName": "Asia",
+      "EnglishName": "Asia"
+    },
+    "Country": {
+      "ID": "CN",
+      "LocalizedName": "China",
+      "EnglishName": "China"
+    },
+    "AdministrativeArea": {
+      "ID": "JS",
+      "LocalizedName": "Jiangsu",
+      "EnglishName": "Jiangsu",
+      "Level": 1,
+      "LocalizedType": "Province",
+      "EnglishType": "Province",
+      "CountryID": "CN"
+    },
+    "TimeZone": {
+      "Code": "CST",
+      "Name": "Asia/Shanghai",
+      "GmtOffset": 8,
+      "IsDaylightSaving": false,
+      "NextOffsetChange": null
+    },
+    "GeoPosition": {
+      "Latitude": 34.66,
+      "Longitude": 119.197,
+      "Elevation": {
+        "Metric": {
+          "Value": 16,
+          "Unit": "m",
+          "UnitType": 5
+        },
+        "Imperial": {
+          "Value": 52,
+          "Unit": "ft",
+          "UnitType": 0
+        }
+      }
+    },
+    "IsAlias": false,
+    "ParentCity": {
+      "Key": "2333025",
+      "LocalizedName": "Lianyun District",
+      "EnglishName": "Lianyun District"
+    },
+    "SupplementalAdminAreas": [],
+    "DataSets": [
+      "AirQuality",
+      "AirQualityCurrentConditions",
+      "AirQualityForecasts",
+      "Alerts",
+      "DailyAirQualityForecast",
+      "DailyLocalIndices",
+      "ForecastConfidence",
+      "FutureRadar",
+      "MinuteCast",
+      "PremiumAirQuality",
+      "TidalForecast"
+    ]
+  }
+]

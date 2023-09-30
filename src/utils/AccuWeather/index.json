@@ -1,0 +1,680 @@
+[
+  {
+    "Name": "空調指數",
+    "ID": 110,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "空氣污染指數",
+    "ID": 108,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "空氣品質指數",
+    "ID": -10,
+    "Ascending": true,
+    "Description": "空氣品質指數用於報告每天空氣品質，可告知週遭空氣的乾淨或受污染程度，以及您可能需要注意的相關健康影響。"
+  },
+  {
+    "Name": "過敏指數",
+    "ID": 127,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "體感溫度",
+    "ID": 134,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "關節炎疼痛預報",
+    "ID": 21,
+    "Ascending": false,
+    "Description": "AccuWeather.com 開發了一套服務因天氣變化可能受到關節疼痛困擾人群的預測，總結了氣候性關節疼痛患者病發的幾率和嚴重程度。The AccuWeather.com 關節炎疼痛預報為關節炎患者提供防範未來天氣造成疼痛加劇的預警，幫助患者提前規劃恰當的體育鍛煉活動。"
+  },
+  {
+    "Name": "氣喘預報",
+    "ID": 23,
+    "Ascending": false,
+    "Description": "多種環境因素均可引起不同風險和程度的氣喘發作。AccuWeather.com 氣喘預報可反映這些因素對氣喘患者産生影響的可能性，級別較高表示氣喘發作的風險和加劇的可能性增加。"
+  },
+  {
+    "Name": "哮喘和肺病指數",
+    "ID": 150,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "大氣擴散指數",
+    "ID": 142,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "戶外燒烤",
+    "ID": 24,
+    "Ascending": true,
+    "Description": "AccuWeather.com 開發了一種天氣預報，將所有決定天氣條件是否有利於戶外燒烤的天氣因素都考慮在內。"
+  },
+  {
+    "Name": "海灘與游泳池預報",
+    "ID": 10,
+    "Ascending": true,
+    "Description": "AccuWeather.com 海灘和泳池預報將衆多天氣和水環境因素考慮在內，幫助預測您在海灘或泳池將會遇到的天氣條件。"
+  },
+  {
+    "Name": "沙灘指數",
+    "ID": 128,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "啤酒指數",
+    "ID": 120,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "騎單車預報",
+    "ID": 4,
+    "Ascending": true,
+    "Description": "AccuWeather.com 騎行預報將影響您戶外騎行舒適度、安全性和能力的所有天氣因素都考慮在內。"
+  },
+  {
+    "Name": "Brightness",
+    "ID": 47,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "洗車指數",
+    "ID": 104,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "衣物乾燥指數",
+    "ID": 107,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "衣物指數",
+    "ID": 101,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "感冒預報",
+    "ID": 25,
+    "Ascending": false,
+    "Description": "天氣對您患感冒的可能性以及感冒的嚴重程度和持續時間都有重要影響。將這些因素結合考慮，便可得出 AccuWeather.com 普通感冒預報。"
+  },
+  {
+    "Name": "舒適指數",
+    "ID": 103,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "感冒指數",
+    "ID": 102,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "感冒指數",
+    "ID": 153,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "堆肥預報",
+    "ID": 38,
+    "Ascending": true,
+    "Description": "AccuWeather.com 堆肥預報將所有對堆肥堆進展情況以及您進行堆肥工作的舒適性有重要影響的因素合幷成一個指數。"
+  },
+  {
+    "Name": "戶外音樂會預報",
+    "ID": 8,
+    "Ascending": true,
+    "Description": "AccuWeather.com 戶外音樂會預報將所有影響您參加戶外音樂會舒適度和安全性的天氣因素都考慮在內。"
+  },
+  {
+    "Name": "施工預報",
+    "ID": 14,
+    "Ascending": true,
+    "Description": "AccuWeather.com 施工預報可幫助您確定適合戶外施工項目的理想天氣條件。"
+  },
+  {
+    "Name": "COPD 預報",
+    "ID": 44,
+    "Ascending": false,
+    "Description": "AccuWeather.com COPD 預報將所有可能會引發慢性阻塞性肺病病患肺病發作的天氣因素全部考慮在內。該預報可預先向此類病患發出潛在有害天氣條件通知，以便有時間採取預防措施。"
+  },
+  {
+    "Name": "約會指數",
+    "ID": 126,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "不舒適指數",
+    "ID": 139,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "適宜遛狗預報",
+    "ID": 43,
+    "Ascending": true,
+    "Description": "AccuWeather.com 開發了一種預報，將您遛狗時影響您和寵物舒適性的所有天氣因素都考慮在內。"
+  },
+  {
+    "Name": "駕駛出行指數",
+    "ID": 40,
+    "Ascending": true,
+    "Description": "AccuWeather.com 駕車出行指數將所有影響您駕駛能力的天氣因素都考慮在內。"
+  },
+  {
+    "Name": "乾燥指數",
+    "ID": 133,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "灰塵與皮屑預報",
+    "ID": 18,
+    "Ascending": false,
+    "Description": "AccuWeather.com 灰塵與皮屑預報有助於您確定空氣中和室內物體表面是否容易積聚灰塵和皮屑。"
+  },
+  {
+    "Name": "家庭能效預報",
+    "ID": 36,
+    "Ascending": true,
+    "Description": "AccuWeather.com 家庭能效預報將所有對家庭能源使用增加或減少有影響的天氣因素與您的家庭和生活方式的典型體驗相結合。"
+  },
+  {
+    "Name": "鍛煉指數",
+    "ID": 125,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "田地種植預報",
+    "ID": 32,
+    "Ascending": true,
+    "Description": "AccuWeather 田地種植預報將土壤濕度、溫度和壓縮性考慮在內，以綜合反映田地的種植適宜性。"
+  },
+  {
+    "Name": "釣魚預報",
+    "ID": 13,
+    "Ascending": true,
+    "Description": "AccuWeather.com 釣魚預報將日月共同作用與天氣資訊相結合來衡量一天的峰值釣魚條件。"
+  },
+  {
+    "Name": "釣魚指數",
+    "ID": 111,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "航班誤點消息",
+    "ID": -3,
+    "Ascending": true,
+    "Description": "AccuWeather.com 乘機出行指數將所有影響您出行航班舒適性的天氣因素都考慮在內。務必定期諮詢航空公司或機場，確認出行航班的時間。"
+  },
+  {
+    "Name": "流感預報",
+    "ID": 26,
+    "Ascending": false,
+    "Description": "每年冬天流感季的到來都會給學校、工作場所和家庭造成影響。AccuWeather.com 流感預報將天氣影響與相關人口統計因素相結合形成的量表可反映流感傳播的總體概率及流感症狀的嚴重程度。"
+  },
+  {
+    "Name": "食物中毒指數",
+    "ID": 136,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "水管凍裂指數",
+    "ID": 141,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "燃油經濟性預報",
+    "ID": 37,
+    "Ascending": true,
+    "Description": "AccuWeather.com 燃油經濟性預報將所有對燃油經濟性增大或減小有影響的天氣因素與您的車輛和駕駛風格的典型體驗相結合。"
+  },
+  {
+    "Name": "高爾夫天氣預報",
+    "ID": 5,
+    "Ascending": true,
+    "Description": "無論您是高爾夫發燒友還是只不過偶爾會打上兩杆，AccuWeather.com 高爾夫預報都能提供幫助，它將過去和當前天氣對球場和您自身安全性和舒適性的影響考慮在內，反映當天打高爾夫的適宜性。"
+  },
+  {
+    "Name": "草地生長預報",
+    "ID": 33,
+    "Ascending": true,
+    "Description": "AccuWeather.com 草地生長環境預報將各種土壤濕度、降水率和蒸散率相結合，概要反映土壤濕度對草地生長之有利程度。"
+  },
+  {
+    "Name": "花粉",
+    "ID": -11,
+    "Ascending": false,
+    "Description": "AccuWeather.com 從過敏症專科醫生、私人醫生、政府機構以及其他來源獲得本地最新測量的花粉計數，然後將所有這些測量值相結合來形成本地未來空氣傳播花粉數量的預報。"
+  },
+  {
+    "Name": "頭髮靜電程度預報",
+    "ID": 42,
+    "Ascending": false,
+    "Description": "這種天氣會對人們的髮型和髮型保持程度產生重大影響。靜電預報採用了 AccuWeather.com 將大氣濕度與可引發頭髮靜電的其他天氣因素相結合而特別研發的專有演算法。"
+  },
+  {
+    "Name": "美髮指數",
+    "ID": 118,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "心臟健康預報",
+    "ID": 16,
+    "Ascending": true,
+    "Description": "此 AccuWeather.com 預報反映的是戶外天氣對輕到中度鍛煉的適宜性，它不僅考慮了實際天氣狀況，還將該區域人們習慣的天氣類型考慮在內。"
+  },
+  {
+    "Name": "高溫指數",
+    "ID": 138,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "熱敏感指數 - 兒童",
+    "ID": 145,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "熱敏感指數 - 建築",
+    "ID": 158,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "熱敏感指數 - 一般人群",
+    "ID": 143,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "熱敏感指數 - 室外工作環境",
+    "ID": 146,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "熱敏感指數 - 公路",
+    "ID": 157,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "熱敏感指數 - 船塢",
+    "ID": 159,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "熱敏感指數 - 老人",
+    "ID": 144,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "熱敏感指數 - 脆弱居住環境",
+    "ID": 149,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "熱敏感指數 - 農作",
+    "ID": 147,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "熱敏感指數 - 溫室",
+    "ID": 148,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "中暑指數",
+    "ID": 105,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "遠足預報",
+    "ID": 3,
+    "Ascending": true,
+    "Description": "AccuWeather.com 遠足預報將所有影響您遠足舒適度、安全性和能力的天氣因素都考慮在內。"
+  },
+  {
+    "Name": "打獵預報",
+    "ID": 20,
+    "Ascending": true,
+    "Description": "AccuWeather 打獵預報將對打獵有影響的日月共同作用因素和天氣因素以及對打獵時的舒適性和安全性有影響的天氣因素考慮在內。"
+  },
+  {
+    "Name": "高血壓指數",
+    "ID": 132,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "室內活動預報",
+    "ID": -2,
+    "Ascending": true,
+    "Description": "AccuWeather.com 室內活動預報可協助您依據惡劣天氣條件確定更適合安排室內活動之時間。"
+  },
+  {
+    "Name": "室內害蟲活動預報",
+    "ID": 45,
+    "Ascending": true,
+    "Description": "AccuWeather 開發了一項預報，該預報結合了影響螞蟻和蟑螂等室內害蟲活動的所有目前和過去天氣因素。"
+  },
+  {
+    "Name": "慢跑預報",
+    "ID": 2,
+    "Ascending": true,
+    "Description": "AccuWeather.com 慢跑預報將所有影響您戶外慢跑舒適度、安全性和能力的天氣因素都考慮在內。"
+  },
+  {
+    "Name": "放風箏預報",
+    "ID": 9,
+    "Ascending": true,
+    "Description": "AccuWeather.com 放風箏預報將所有影響您戶外放風箏舒適度、安全性和能力的天氣因素都考慮在內。"
+  },
+  {
+    "Name": "風箏指數",
+    "ID": 121,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "化妝指數",
+    "ID": 122,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "偏頭痛預報",
+    "ID": 27,
+    "Ascending": false,
+    "Description": "偏頭痛可能隨時發作。AccuWeather.com 偏頭痛預報將當前天氣與天氣變化情況相結合來預測偏頭痛發作的概率，以及偏頭痛可能的劇烈程度和持續時間。"
+  },
+  {
+    "Name": "黴菌",
+    "ID": -12,
+    "Ascending": false,
+    "Description": "AccuWeather.com 從過敏症專科醫生、私人醫生、政府機構以及其他來源獲得本地最新測量的花粉計數，然後將所有這些測量值相結合來形成本地未來空氣傳播花粉數量的預報。"
+  },
+  {
+    "Name": "情緒指數",
+    "ID": 124,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "晨練指數",
+    "ID": 100,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "蚊蟲活動預報",
+    "ID": 17,
+    "Ascending": true,
+    "Description": "AccuWeather.com 開發了一種天氣預報，將過去和當前所有影響蚊蟲活動性的天氣因素都考慮在內。"
+  },
+  {
+    "Name": "修剪草坪預報",
+    "ID": 28,
+    "Ascending": true,
+    "Description": "AccuWeather.com 修剪草坪預報將所有對您修剪草坪時的舒適性、安全性和便利性有影響的天氣因素加以綜合考慮。在生長季之外，該指數始終為 1。"
+  },
+  {
+    "Name": "夜生活指數",
+    "ID": 119,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "戶外活動預報",
+    "ID": 29,
+    "Ascending": true,
+    "Description": "AccuWeather.com 戶外活動預報將所有對您在典型戶外活動期間的安全性和舒適性有影響的天氣因素以及您往來於戶外活動地點的出行都考慮在內。"
+  },
+  {
+    "Name": "室外害蟲活動預報",
+    "ID": 46,
+    "Ascending": true,
+    "Description": "AccuWeather 開發了一項預報，該預報結合了影響蚊子和蜱蟲等室外害蟲活動的所有目前和過去天氣因素。"
+  },
+  {
+    "Name": "松花粉等級",
+    "ID": 155,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "預防污染",
+    "ID": 135,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "豚草花粉",
+    "ID": -13,
+    "Ascending": false,
+    "Description": "AccuWeather.com 從過敏症專科醫生、私人醫生、政府機構以及其他來源獲得本地最新測量的花粉計數，然後將所有這些測量值相結合來形成本地未來空氣傳播花粉數量的預報。"
+  },
+  {
+    "Name": "路況指數",
+    "ID": 116,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "賽艇指數",
+    "ID": 114,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "跑步預報",
+    "ID": 1,
+    "Ascending": true,
+    "Description": "AccuWeather.com 跑步預報將所有影響您戶外跑步舒適度、安全性和能力的天氣因素都考慮在內。"
+  },
+  {
+    "Name": "航行預報",
+    "ID": 11,
+    "Ascending": true,
+    "Description": "AccuWeather.com 航行預報將有關最優風況的資訊與影響航行當天安全性和舒適性的天氣和水環境因素相結合。"
+  },
+  {
+    "Name": "早晨校車預報",
+    "ID": 35,
+    "Ascending": true,
+    "Description": "AccuWeather.com 早晨校車預報將所有對校車站安全性和舒適性有影響的天氣因素的相關資訊加以整合。"
+  },
+  {
+    "Name": "下雪天預報",
+    "ID": 19,
+    "Ascending": true,
+    "Description": "雪天預報根據預期的冬季天氣預測您所在地點學校閉校的概率。注：雪天預報並非用於替代直接由學區發出的正式學校閉校和延後開課通知。"
+  },
+  {
+    "Name": "購物預報",
+    "ID": 39,
+    "Ascending": true,
+    "Description": "AccuWeather.com 假期購物預報可協助您確定理想的購物天氣條件。"
+  },
+  {
+    "Name": "購物指數",
+    "ID": 113,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "片語",
+    "ID": 131,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "竇性頭痛預報",
+    "ID": 30,
+    "Ascending": false,
+    "Description": "AccuWeather.com 竇性頭痛預報將天氣影響與相關人口統計因素相結合來反映遭遇竇性頭痛的概率，以及竇性頭痛可能的劇烈程度和持續時間。"
+  },
+  {
+    "Name": "滑板預報",
+    "ID": 7,
+    "Ascending": true,
+    "Description": "AccuWeather.com 滑板運動預報將所有影響您滑板運動舒適度、安全性和能力的天氣因素都考慮在內。"
+  },
+  {
+    "Name": "滑雪天氣預報",
+    "ID": 15,
+    "Ascending": true,
+    "Description": "無論是滑雪行家還是偶爾為之的滑雪者，AccuWeather.com 滑雪指數都能對您將在雪坡和越野雪道上遇到的天氣條件做出預報，它將形成理想滑雪日的天氣條件和雪況都考慮在內。此外，還將往來於滑雪地點的出行條件考慮在內。在沒有滑雪的地點，該指數始終為 1。"
+  },
+  {
+    "Name": "皮膚敏感指數",
+    "ID": 152,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "土壤濕度預報",
+    "ID": 34,
+    "Ascending": true,
+    "Description": "AccuWeather.com 土壤濕度預報將各種土壤濕度、降水率和蒸散率相結合，概要反映土壤濕度對作物生長的有利程度。在生長季之外，該指數始終為 1。"
+  },
+  {
+    "Name": "觀星預報",
+    "ID": 12,
+    "Ascending": true,
+    "Description": "AccuWeather.com 觀星預報考慮天氣條件和月運週期來預報業餘觀星的最理想夜晚。"
+  },
+  {
+    "Name": "中風指數",
+    "ID": 151,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "防曬指數",
+    "ID": 112,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "墨鏡指數",
+    "ID": 129,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "網球預報",
+    "ID": 6,
+    "Ascending": true,
+    "Description": "AccuWeather.com 網球預報將所有影響您打網球舒適度、安全性和能力的天氣因素都考慮在內。"
+  },
+  {
+    "Name": "乾渴預報，按國家時間進行預報",
+    "ID": 41,
+    "Ascending": true,
+    "Description": "AccuWeather 飲水量預報可按國家時間協助您安排一週計劃並保持水分供給。無論是舉辦戶外聚會還是在室內享受與家人團聚的時光，每個夏日都是國家時間預報日。"
+  },
+  {
+    "Name": "旅遊指數",
+    "ID": 109,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "交通指數",
+    "ID": 115,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "乘機出行指數",
+    "ID": 31,
+    "Ascending": false,
+    "Description": "AccuWeather.com 乘機出行指數將所有影響您出行航班舒適性的天氣因素都考慮在內。務必定期諮詢航空公司或機場，確認出行航班的時間。"
+  },
+  {
+    "Name": "喬木花粉等級",
+    "ID": 154,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "樹木花粉",
+    "ID": -14,
+    "Ascending": false,
+    "Description": "AccuWeather.com 從過敏症專科醫生、私人醫生、政府機構以及其他來源獲得本地最新測量的花粉計數，然後將所有這些測量值相結合來形成本地未來空氣傳播花粉數量的預報。"
+  },
+  {
+    "Name": "打傘指數",
+    "ID": 117,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "紫外線指數",
+    "ID": 140,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "紫外線強度指數",
+    "ID": 106,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "紫外線指數",
+    "ID": -15,
+    "Ascending": true,
+    "Description": "AccuWeather.com 紫外線指數預報本地紫外線輻射天氣條件。它每小時更新，告知您參加戶外活動所需的防曬程度。"
+  },
+  {
+    "Name": "草花粉等級",
+    "ID": 156,
+    "Ascending": false,
+    "Description": null
+  },
+  {
+    "Name": "風寒指數",
+    "ID": 123,
+    "Ascending": true,
+    "Description": null
+  },
+  {
+    "Name": "風寒指數",
+    "ID": 137,
+    "Ascending": false,
+    "Description": null
+  }
+]

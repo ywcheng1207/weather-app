@@ -1,0 +1,207 @@
+[
+  {
+    "ID": "AF",
+    "LocalizedName": "Afghanistan",
+    "EnglishName": "Afghanistan"
+  },
+  {
+    "ID": "AM",
+    "LocalizedName": "Armenia",
+    "EnglishName": "Armenia"
+  },
+  {
+    "ID": "AZ",
+    "LocalizedName": "Azerbaijan",
+    "EnglishName": "Azerbaijan"
+  },
+  {
+    "ID": "BD",
+    "LocalizedName": "Bangladesh",
+    "EnglishName": "Bangladesh"
+  },
+  {
+    "ID": "BN",
+    "LocalizedName": "Brunei",
+    "EnglishName": "Brunei"
+  },
+  {
+    "ID": "BT",
+    "LocalizedName": "Bhutan",
+    "EnglishName": "Bhutan"
+  },
+  {
+    "ID": "CC",
+    "LocalizedName": "Cocos (Keeling) Islands",
+    "EnglishName": "Cocos (Keeling) Islands"
+  },
+  {
+    "ID": "CN",
+    "LocalizedName": "China",
+    "EnglishName": "China"
+  },
+  {
+    "ID": "CX",
+    "LocalizedName": "Christmas Island",
+    "EnglishName": "Christmas Island"
+  },
+  {
+    "ID": "GE",
+    "LocalizedName": "Georgia",
+    "EnglishName": "Georgia"
+  },
+  {
+    "ID": "HK",
+    "LocalizedName": "Hong Kong",
+    "EnglishName": "Hong Kong"
+  },
+  {
+    "ID": "ID",
+    "LocalizedName": "Indonesia",
+    "EnglishName": "Indonesia"
+  },
+  {
+    "ID": "IN",
+    "LocalizedName": "India",
+    "EnglishName": "India"
+  },
+  {
+    "ID": "IO",
+    "LocalizedName": "British Indian Ocean Territory",
+    "EnglishName": "British Indian Ocean Territory"
+  },
+  {
+    "ID": "JP",
+    "LocalizedName": "Japan",
+    "EnglishName": "Japan"
+  },
+  {
+    "ID": "KG",
+    "LocalizedName": "Kyrgyzstan",
+    "EnglishName": "Kyrgyzstan"
+  },
+  {
+    "ID": "KH",
+    "LocalizedName": "Cambodia",
+    "EnglishName": "Cambodia"
+  },
+  {
+    "ID": "KP",
+    "LocalizedName": "North Korea",
+    "EnglishName": "North Korea"
+  },
+  {
+    "ID": "KR",
+    "LocalizedName": "South Korea",
+    "EnglishName": "South Korea"
+  },
+  {
+    "ID": "KZ",
+    "LocalizedName": "Kazakhstan",
+    "EnglishName": "Kazakhstan"
+  },
+  {
+    "ID": "LA",
+    "LocalizedName": "Laos",
+    "EnglishName": "Laos"
+  },
+  {
+    "ID": "LK",
+    "LocalizedName": "Sri Lanka",
+    "EnglishName": "Sri Lanka"
+  },
+  {
+    "ID": "MM",
+    "LocalizedName": "Myanmar",
+    "EnglishName": "Myanmar"
+  },
+  {
+    "ID": "MN",
+    "LocalizedName": "Mongolia",
+    "EnglishName": "Mongolia"
+  },
+  {
+    "ID": "MO",
+    "LocalizedName": "Macau",
+    "EnglishName": "Macau"
+  },
+  {
+    "ID": "MV",
+    "LocalizedName": "Maldives",
+    "EnglishName": "Maldives"
+  },
+  {
+    "ID": "MY",
+    "LocalizedName": "Malaysia",
+    "EnglishName": "Malaysia"
+  },
+  {
+    "ID": "NP",
+    "LocalizedName": "Nepal",
+    "EnglishName": "Nepal"
+  },
+  {
+    "ID": "PH",
+    "LocalizedName": "Philippines",
+    "EnglishName": "Philippines"
+  },
+  {
+    "ID": "PK",
+    "LocalizedName": "Pakistan",
+    "EnglishName": "Pakistan"
+  },
+  {
+    "ID": "RU",
+    "LocalizedName": "Russia",
+    "EnglishName": "Russia"
+  },
+  {
+    "ID": "SG",
+    "LocalizedName": "Singapore",
+    "EnglishName": "Singapore"
+  },
+  {
+    "ID": "SP",
+    "LocalizedName": "Nansha Islands",
+    "EnglishName": "Nansha Islands"
+  },
+  {
+    "ID": "TH",
+    "LocalizedName": "Thailand",
+    "EnglishName": "Thailand"
+  },
+  {
+    "ID": "TJ",
+    "LocalizedName": "Tajikistan",
+    "EnglishName": "Tajikistan"
+  },
+  {
+    "ID": "TL",
+    "LocalizedName": "Timor-Leste",
+    "EnglishName": "Timor-Leste"
+  },
+  {
+    "ID": "TM",
+    "LocalizedName": "Turkmenistan",
+    "EnglishName": "Turkmenistan"
+  },
+  {
+    "ID": "TR",
+    "LocalizedName": "Turkey",
+    "EnglishName": "Turkey"
+  },
+  {
+    "ID": "TW",
+    "LocalizedName": "Taiwan",
+    "EnglishName": "Taiwan"
+  },
+  {
+    "ID": "UZ",
+    "LocalizedName": "Uzbekistan",
+    "EnglishName": "Uzbekistan"
+  },
+  {
+    "ID": "VN",
+    "LocalizedName": "Vietnam",
+    "EnglishName": "Vietnam"
+  }
+]
