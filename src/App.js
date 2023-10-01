@@ -1,14 +1,19 @@
 // library
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import styled from '@emotion/styled'
 import dayjs from 'dayjs'
+import { getMoment } from './utils/helpers'
 
 // images
 import { ThemeProvider } from '@emotion/react'
 import { ReactComponent as AirFlowIcon } from './images/airFlow.svg'
-import { ReactComponent as DayCloudyIcon } from './images/day-cloudy.svg'
+// import { ReactComponent as DayCloudyIcon } from './images/day-cloudy.svg'
 import { ReactComponent as RainIcon } from './images/rain.svg'
 import { ReactComponent as RefreshIcon } from './images/refresh.svg'
+import { ReactComponent as LoadingIcon } from './images/loading.svg'
+
+// components
+import WeatherIcon from './components/WeatherIcon'
 
 // theme
 const theme = {
@@ -32,9 +37,15 @@ const theme = {
 }
 
 // accu api
-const AUTHORIZATION_KEY = 'Vl4ShXFx793OuUPAtKGCYrwuWDwuxfAZ'
-const url =
-  'http://dataservice.accuweather.com/forecasts/v1/daily/1day/4-315078_1_AL'
+// sKrX8HgKnprwshKWA2c0z9B8gSnuvLi1
+// Vl4ShXFx793OuUPAtKGCYrwuWDwuxfAZ
+const AUTHORIZATION_KEY = 'sKrX8HgKnprwshKWA2c0z9B8gSnuvLi1'
+const LOCATION_ID = '4-315078_1_AL'
+const LANGUAGE = 'zh-tw'
+const CONDITION_URL = `http://dataservice.accuweather.com/currentconditions/v1/${LOCATION_ID}
+?apikey=${AUTHORIZATION_KEY}&details=true&language=${LANGUAGE}`
+const FORECAST_URL = `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${LOCATION_ID}
+?apikey=${AUTHORIZATION_KEY}&details=true&metric=true&language=${LANGUAGE}`
 
 // style
 const Container = styled.div`
@@ -120,89 +131,135 @@ const Refresh = styled.div`
   display: inline-flex;
   align-items: flex-end;
   color: ${({ theme }) => theme.textColor};
+  @keyframes rotate {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transfrom: rotate(0deg);
+    }
+  }
   svg {
     margin-left: 10px;
     width: 15px;
     height: 15px;
     cursor: pointer;
+    animation: rotate infinite 1.5s linear;
+    animation-duration: ${({ isLoading }) => (isLoading ? '1.5s' : '0s')};
   }
 `
 
-const DayCloudy = styled(DayCloudyIcon)`
-  flex-basis: 30%;
-`
+// const DayCloudy = styled(DayCloudyIcon)`
+//   flex-basis: 30%;
+// `
+
+const fetchCurrentWeather = () => {
+  return fetch(FORECAST_URL)
+    .then((res) => res.json())
+    .then((data) => {
+      const forecastData = data.DailyForecasts[0]
+      return {
+        locationName: '台北市',
+        windSpeed: forecastData.Day.Wind.Speed.Value,
+        rainPossibility: forecastData.Day.RainProbability,
+        observationTime: forecastData.Day.Date
+      }
+    })
+}
+
+const fetchWeatherCondition = () => {
+  return fetch(CONDITION_URL)
+    .then((res) => res.json())
+    .then((data) => {
+      return {
+        description: data[0].WeatherText,
+        temperature: data[0].Temperature.Metric.Value,
+        weatherCode: data[0].WeatherIcon,
+        isLoading: false
+      }
+    })
+}
 
 function App() {
+  // state
   const [currentTheme, setCurrentTheme] = useState('dark')
   const [currentWeather, setCurrentWeather] = useState({
     locationName: '台北市',
-    description: '多雲',
-    windSpeed: '1.1',
-    temperature: 22.9,
-    rainPossibility: 48.3,
-    observationTime: '2023-09-30T12:43:00+08:00',
+    description: '',
+    windSpeed: 0,
+    temperature: 0,
+    rainPossibility: 0,
+    observationTime: new Date(),
     isLoading: true
   })
 
-  const handleTheme = () => () => {
-    currentTheme === 'light'
-      ? setCurrentTheme('dark')
-      : setCurrentTheme('light')
-  }
+  // des
+  const {
+    observationTime,
+    locationName,
+    description,
+    windSpeed,
+    temperature,
+    rainPossibility,
+    isLoading,
+    weatherCode
+  } = currentWeather
+  const moment = useMemo(() => getMoment('臺北市'), [])
 
-  const fetchCurrentWeather = () => {
-    setCurrentWeather((pre) => ({ ...pre, isLoading: true }))
-    fetch(
-      `${url}?apikey=${AUTHORIZATION_KEY}&details=true&metric=true&language=zh-tw`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        const forecastData = data.DailyForecasts[0]
-        const headLineData = data.Headline
-        setCurrentWeather({
-          locationName: '台北市',
-          description: headLineData.Text,
-          windSpeed: forecastData.Day.Wind.Speed.Value,
-          temperature: forecastData.Temperature.Maximum.Value,
-          rainPossibility: forecastData.Day.RainProbability,
-          observationTime: forecastData.Day.Date,
-          isLoading: false
-        })
+  // function
+  const fetchData = async () => {
+    setCurrentWeather((pre) => ({
+      ...pre,
+      isLoading: true
+    }))
+    const [currentWeatherData, conditionData] = await Promise.all([
+      fetchCurrentWeather(),
+      fetchWeatherCondition()
+    ])
+    setTimeout(() => {
+      setCurrentWeather({
+        ...currentWeatherData,
+        ...conditionData,
+        isLoading: false
       })
+    }, 300)
   }
-
+  // effect
   useEffect(() => {
-    fetchCurrentWeather()
+    fetchData()
   }, [])
+  useEffect(() => {
+    setCurrentTheme(moment === 'day' ? 'light' : 'dark')
+  }, [moment])
 
   return (
     <ThemeProvider theme={theme[currentTheme]}>
       <Container>
-        <WeatherCard onClick={handleTheme()}>
-          <Location>{currentWeather.locationName}</Location>
-          <Description>{currentWeather.description}</Description>
+        <WeatherCard>
+          <Location>{locationName}</Location>
+          <Description>{description}</Description>
           <CurrentWeather>
             <Temperature>
-              {Math.round(currentWeather.temperature)}
+              {Math.round(temperature)}
               <Celsius>℃</Celsius>
             </Temperature>
-            <DayCloudy />
+            <WeatherIcon weatherCode={weatherCode} moment={moment} />
           </CurrentWeather>
           <AirFlow>
             <AirFlowIcon />
-            {currentWeather.windSpeed} m/h
+            {windSpeed} m/h
           </AirFlow>
           <Rain>
             <RainIcon />
-            {currentWeather.rainPossibility}%
+            {rainPossibility}%
           </Rain>
-          <Refresh>
+          <Refresh onClick={fetchData} isLoading={isLoading}>
             最後觀測時間：
             {new Intl.DateTimeFormat('zh-TW', {
               hour: 'numeric',
               minute: 'numeric'
-            }).format(dayjs(currentWeather.observationTime))}{' '}
-            <RefreshIcon onClick={() => fetchCurrentWeather()} />
+            }).format(dayjs(observationTime))}{' '}
+            {isLoading ? <LoadingIcon /> : <RefreshIcon />}
           </Refresh>
         </WeatherCard>
       </Container>
