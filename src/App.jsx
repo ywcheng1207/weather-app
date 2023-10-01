@@ -2,6 +2,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import styled from '@emotion/styled'
 import { getMoment } from './utils/helpers'
+import useWeatherAPI from './hooks/useWeatherAPI'
 
 // images
 import { ThemeProvider } from '@emotion/react'
@@ -50,71 +51,18 @@ const Container = styled.div`
   justify-content: center;
 `
 
-const fetchCurrentWeather = () => {
-  return fetch(FORECAST_URL)
-    .then((res) => res.json())
-    .then((data) => {
-      const forecastData = data.DailyForecasts[0]
-      return {
-        locationName: '台北市',
-        windSpeed: forecastData.Day.Wind.Speed.Value,
-        rainPossibility: forecastData.Day.RainProbability,
-        observationTime: forecastData.Day.Date
-      }
-    })
-}
-
-const fetchWeatherCondition = () => {
-  return fetch(CONDITION_URL)
-    .then((res) => res.json())
-    .then((data) => {
-      return {
-        description: data[0].WeatherText,
-        temperature: data[0].Temperature.Metric.Value,
-        weatherCode: data[0].WeatherIcon,
-        isLoading: false
-      }
-    })
-}
-
 function App() {
   // state
   const [currentTheme, setCurrentTheme] = useState('dark')
-  const [currentWeather, setCurrentWeather] = useState({
-    locationName: '台北市',
-    description: '',
-    windSpeed: 0,
-    temperature: 0,
-    rainPossibility: 0,
-    observationTime: new Date(),
-    isLoading: true
-  })
 
-  // des
+  //
+  const [currentWeather, fetchData] = useWeatherAPI({
+    FORECAST_URL,
+    CONDITION_URL
+  })
   const moment = useMemo(() => getMoment('臺北市'), [])
 
-  // function
-  const fetchData = async () => {
-    setCurrentWeather((pre) => ({
-      ...pre,
-      isLoading: true
-    }))
-    const [currentWeatherData, conditionData] = await Promise.all([
-      fetchCurrentWeather(),
-      fetchWeatherCondition()
-    ])
-    setTimeout(() => {
-      setCurrentWeather({
-        ...currentWeatherData,
-        ...conditionData,
-        isLoading: false
-      })
-    }, 300)
-  }
   // effect
-  useEffect(() => {
-    fetchData()
-  }, [])
   useEffect(() => {
     setCurrentTheme(moment === 'day' ? 'light' : 'dark')
   }, [moment])
