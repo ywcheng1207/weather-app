@@ -7,10 +7,8 @@ const fetchCurrentWeather = ({ FORECAST_URL }) => {
     .then((data) => {
       const forecastData = data.DailyForecasts[0]
       return {
-        locationName: '台北市',
         windSpeed: forecastData.Day.Wind.Speed.Value,
-        rainPossibility: forecastData.Day.RainProbability,
-        observationTime: forecastData.Day.Date
+        rainPossibility: forecastData.Day.RainProbability
       }
     })
 }
@@ -20,6 +18,7 @@ const fetchWeatherCondition = ({ CONDITION_URL }) => {
     .then((res) => res.json())
     .then((data) => {
       return {
+        observationTime: data[0].LocalObservationDateTime,
         description: data[0].WeatherText,
         temperature: data[0].Temperature.Metric.Value,
         weatherCode: data[0].WeatherIcon,
@@ -31,12 +30,11 @@ const fetchWeatherCondition = ({ CONDITION_URL }) => {
 const useWeatherAPI = ({ FORECAST_URL, CONDITION_URL }) => {
   // state
   const [currentWeather, setCurrentWeather] = useState({
-    locationName: '台北市',
+    locationName: '',
     description: '',
     windSpeed: 0,
     temperature: 0,
     rainPossibility: 0,
-    observationTime: new Date(),
     isLoading: true
   })
   // function
@@ -60,7 +58,7 @@ const useWeatherAPI = ({ FORECAST_URL, CONDITION_URL }) => {
   // effect
   useEffect(() => {
     fetchData()
-  }, [])
+  }, [FORECAST_URL, CONDITION_URL])
 
   return [currentWeather, fetchData]
 }

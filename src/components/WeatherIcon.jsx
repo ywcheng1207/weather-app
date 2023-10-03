@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import styled from '@emotion/styled'
 
 // icon
@@ -62,12 +62,23 @@ const weatherCodeToType = (weatherCode) => {
   return weatherType
 }
 
-const WeatherIcon = ({ weatherCode, moment }) => {
+const WeatherIcon = ({ weatherCode, moment, onTheme }) => {
+  const [weatherIcon, setWeatherIcon] = useState()
   const weatherType = useMemo(
     () => weatherCodeToType(weatherCode),
     [weatherCode]
   )
-  const weatherIcon = weatherIcons[moment][weatherType]
+  useEffect(() => {
+    if (moment) {
+      if (moment.split(' ').includes('pm')) {
+        setWeatherIcon(weatherIcons.night[weatherType])
+        onTheme('dark')
+      } else {
+        setWeatherIcon(weatherIcons.day[weatherType])
+        onTheme('light')
+      }
+    }
+  }, [moment])
 
   return <IconContainer>{weatherIcon}</IconContainer>
 }

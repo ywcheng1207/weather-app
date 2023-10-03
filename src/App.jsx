@@ -1,14 +1,13 @@
 // library
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
-import { getMoment } from './utils/helpers'
 import useWeatherAPI from './hooks/useWeatherAPI'
-
 // images
 import { ThemeProvider } from '@emotion/react'
 
 // components
 import WeatherCard from './views/WeatherCard'
+import WeatherSetting from './views/WeatherSetting'
 
 // theme
 const theme = {
@@ -34,13 +33,9 @@ const theme = {
 // accu api
 // sKrX8HgKnprwshKWA2c0z9B8gSnuvLi1
 // Vl4ShXFx793OuUPAtKGCYrwuWDwuxfAZ
-const AUTHORIZATION_KEY = 'sKrX8HgKnprwshKWA2c0z9B8gSnuvLi1'
-const LOCATION_ID = '4-315078_1_AL'
+// 4-315078_1_AL
+const AUTHORIZATION_KEY = 'Vl4ShXFx793OuUPAtKGCYrwuWDwuxfAZ'
 const LANGUAGE = 'zh-tw'
-const CONDITION_URL = `http://dataservice.accuweather.com/currentconditions/v1/${LOCATION_ID}
-?apikey=${AUTHORIZATION_KEY}&details=true&language=${LANGUAGE}`
-const FORECAST_URL = `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${LOCATION_ID}
-?apikey=${AUTHORIZATION_KEY}&details=true&metric=true&language=${LANGUAGE}`
 
 // style
 const Container = styled.div`
@@ -54,27 +49,62 @@ const Container = styled.div`
 function App() {
   // state
   const [currentTheme, setCurrentTheme] = useState('dark')
+  const [currentPage, setCurrentPage] = useState('WeatherCard')
+  const [currentCity, setCurrentCity] = useState(
+    () => localStorage.getItem('city') || '臺北市'
+  )
+  const [currentCityKey, setCurrentCityKey] = useState(
+    () => localStorage.getItem('key') || '315078'
+  )
+
+  //
+  const CONDITION_URL = `http://dataservice.accuweather.com/currentconditions/v1/${currentCityKey}
+?apikey=${AUTHORIZATION_KEY}&details=true&language=${LANGUAGE}`
+  const FORECAST_URL = `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${currentCityKey}
+?apikey=${AUTHORIZATION_KEY}&details=true&metric=true&language=${LANGUAGE}`
+
+  //
+  const handleCurrentCity = ({ locationName, locationKey }) => {
+    setCurrentCity(locationName)
+    setCurrentCityKey(locationKey)
+  }
+  const handleTheme = (type) => {
+    setCurrentTheme(type)
+  }
 
   //
   const [currentWeather, fetchData] = useWeatherAPI({
     FORECAST_URL,
     CONDITION_URL
   })
-  const moment = useMemo(() => getMoment('臺北市'), [])
 
+  //
+  const handleCurrentPage = (page) => () => {
+    setCurrentPage(page)
+  }
   // effect
-  useEffect(() => {
-    setCurrentTheme(moment === 'day' ? 'light' : 'dark')
-  }, [moment])
+  // useEffect(() => {
+  //   setCurrentTheme(moment === 'day' ? 'light' : 'dark')
+  // }, [moment])
 
   return (
     <ThemeProvider theme={theme[currentTheme]}>
       <Container>
-        <WeatherCard
-          currentWeather={currentWeather}
-          moment={moment}
-          fetchData={fetchData}
-        />
+        {currentPage === 'WeatherCard' && (
+          <WeatherCard
+            currentWeather={currentWeather}
+            currentCity={currentCity}
+            onTheme={handleTheme}
+            fetchData={fetchData}
+            onCurrentPage={handleCurrentPage}
+          />
+        )}
+        {currentPage === 'WeatherSetting' && (
+          <WeatherSetting
+            onCurrentPage={handleCurrentPage}
+            onCurrentCity={handleCurrentCity}
+          />
+        )}
       </Container>
     </ThemeProvider>
   )

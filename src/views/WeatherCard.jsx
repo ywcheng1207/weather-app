@@ -1,13 +1,17 @@
 // library
 import styled from '@emotion/styled'
-import dayjs from 'dayjs'
+import { transTime } from '../utils/helpers'
+
 // components
 import WeatherIcon from './../components/WeatherIcon'
+
 // images
 import { ReactComponent as AirFlowIcon } from './../images/airFlow.svg'
 import { ReactComponent as RainIcon } from './../images/rain.svg'
 import { ReactComponent as RefreshIcon } from './../images/refresh.svg'
 import { ReactComponent as LoadingIcon } from './../images/loading.svg'
+import { ReactComponent as CogIcon } from './../images/cog.svg'
+
 // style
 const WeatherCardWrapper = styled.div`
   position: relative;
@@ -99,11 +103,24 @@ const Refresh = styled.div`
     animation-duration: ${({ isLoading }) => (isLoading ? '1.5s' : '0s')};
   }
 `
+const Cog = styled(CogIcon)`
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+`
 
-const WeatherCard = ({ currentWeather, moment, fetchData }) => {
+const WeatherCard = ({
+  currentWeather,
+  currentCity,
+  fetchData,
+  onCurrentPage,
+  onTheme
+}) => {
   const {
     observationTime,
-    locationName,
     description,
     windSpeed,
     temperature,
@@ -111,16 +128,22 @@ const WeatherCard = ({ currentWeather, moment, fetchData }) => {
     isLoading,
     weatherCode
   } = currentWeather
+
   return (
     <WeatherCardWrapper>
-      <Location>{locationName}</Location>
+      <Cog onClick={onCurrentPage('WeatherSetting')} />
+      <Location>{currentCity}</Location>
       <Description>{description}</Description>
       <CurrentWeather>
         <Temperature>
           {Math.round(temperature)}
           <Celsius>℃</Celsius>
         </Temperature>
-        <WeatherIcon weatherCode={weatherCode} moment={moment} />
+        <WeatherIcon
+          weatherCode={weatherCode}
+          moment={transTime(observationTime)}
+          onTheme={onTheme}
+        />
       </CurrentWeather>
       <AirFlow>
         <AirFlowIcon />
@@ -131,11 +154,8 @@ const WeatherCard = ({ currentWeather, moment, fetchData }) => {
         {rainPossibility}%{' '}
       </Rain>
       <Refresh onClick={fetchData} isLoading={isLoading}>
-        最後觀測時間：
-        {new Intl.DateTimeFormat('zh-TW', {
-          hour: 'numeric',
-          minute: 'numeric'
-        }).format(dayjs(observationTime))}{' '}
+        觀測時間：
+        {transTime(observationTime)}
         {isLoading ? <LoadingIcon /> : <RefreshIcon />}
       </Refresh>
     </WeatherCardWrapper>

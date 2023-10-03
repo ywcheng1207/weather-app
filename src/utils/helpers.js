@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 // STEP 1：匯入日出日落資料
 import sunriseAndSunsetData from './sunrise-sunset.json'
 
@@ -45,4 +47,22 @@ export const getMoment = (locationName) => {
   return sunriseTimestamp <= nowTimeStamp && nowTimeStamp <= sunsetTimestamp
     ? 'day'
     : 'night'
+}
+
+export const transTime = (theTime) => {
+  if (theTime) {
+    const timeZoneRegex = /([-+]\d{2}:\d{2})$/
+    const utcArray = timeZoneRegex.exec(theTime)[0].split(':')
+    let utc = (Math.abs(utcArray[0]) * 60 + Number(utcArray[1])) / 60
+    if (utcArray[0].split('').includes('-')) {
+      utc = -1 * utc
+    }
+    const currentTime = moment
+      .utc(theTime)
+      .utcOffset(utc)
+      .format('dddd, MM/D YYYY, h:mm a')
+    return currentTime
+  } else {
+    return ''
+  }
 }
