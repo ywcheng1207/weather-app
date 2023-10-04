@@ -34,7 +34,7 @@ const theme = {
 // sKrX8HgKnprwshKWA2c0z9B8gSnuvLi1
 // Vl4ShXFx793OuUPAtKGCYrwuWDwuxfAZ
 // 4-315078_1_AL
-const AUTHORIZATION_KEY = 'Vl4ShXFx793OuUPAtKGCYrwuWDwuxfAZ'
+const AUTHORIZATION_KEY = 'sKrX8HgKnprwshKWA2c0z9B8gSnuvLi1'
 const LANGUAGE = 'zh-tw'
 
 // style
@@ -58,9 +58,9 @@ function App() {
   )
 
   //
-  const CONDITION_URL = `http://dataservice.accuweather.com/currentconditions/v1/${currentCityKey}
+  const CONDITION_URL = `https://dataservice.accuweather.com/currentconditions/v1/${currentCityKey}
 ?apikey=${AUTHORIZATION_KEY}&details=true&language=${LANGUAGE}`
-  const FORECAST_URL = `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${currentCityKey}
+  const FORECAST_URL = `https://dataservice.accuweather.com/forecasts/v1/daily/1day/${currentCityKey}
 ?apikey=${AUTHORIZATION_KEY}&details=true&metric=true&language=${LANGUAGE}`
 
   //

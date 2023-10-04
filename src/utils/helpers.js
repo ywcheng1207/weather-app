@@ -62,7 +62,5 @@ export const transTime = (theTime) => {
       .utcOffset(utc)
       .format('dddd, MM/D YYYY, h:mm a')
     return currentTime
-  } else {
-    return ''
   }
 }
