@@ -1,6 +1,10 @@
-// library
+// tools
 import styled from '@emotion/styled'
+import useWeatherAPI from '../hooks/useWeatherAPI'
 import { transTime } from '../utils/helpers'
+import { useDispatch, useSelector } from 'react-redux'
+import { switchPage } from '../store/slice/page'
+import { selectLocation } from '../store/slice/location'
 
 // components
 import WeatherIcon from './../components/WeatherIcon'
@@ -112,13 +116,12 @@ const Cog = styled(CogIcon)`
   cursor: pointer;
 `
 
-const WeatherCard = ({
-  currentWeather,
-  currentCity,
-  fetchData,
-  onCurrentPage,
-  onTheme
-}) => {
+const WeatherCard = () => {
+  const locationState = useSelector(selectLocation)
+  //
+  const [currentWeather, fetchData] = useWeatherAPI({
+    currentCityKey: locationState.key
+  })
   const {
     observationTime,
     description,
@@ -129,10 +132,12 @@ const WeatherCard = ({
     weatherCode
   } = currentWeather
 
+  const dispatch = useDispatch()
+
   return (
     <WeatherCardWrapper>
-      <Cog onClick={onCurrentPage('WeatherSetting')} />
-      <Location>{currentCity}</Location>
+      <Cog onClick={() => dispatch(switchPage({ value: 'WeatherSetting' }))} />
+      <Location>{locationState.city}</Location>
       <Description>{description}</Description>
       <CurrentWeather>
         <Temperature>
@@ -142,7 +147,6 @@ const WeatherCard = ({
         <WeatherIcon
           weatherCode={weatherCode}
           moment={transTime(observationTime)}
-          onTheme={onTheme}
         />
       </CurrentWeather>
       <AirFlow>

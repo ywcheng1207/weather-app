@@ -1,8 +1,8 @@
-// library
-import React, { useState } from 'react'
+// tools
 import styled from '@emotion/styled'
-import useWeatherAPI from './hooks/useWeatherAPI'
-// images
+import { useSelector } from 'react-redux/es/hooks/useSelector'
+import { selectTheme } from './store/slice/theme'
+import { selectPage } from './store/slice/page'
 import { ThemeProvider } from '@emotion/react'
 
 // components
@@ -30,13 +30,6 @@ const theme = {
   }
 }
 
-// accu api
-// sKrX8HgKnprwshKWA2c0z9B8gSnuvLi1
-// Vl4ShXFx793OuUPAtKGCYrwuWDwuxfAZ
-// 4-315078_1_AL
-const AUTHORIZATION_KEY = 'sKrX8HgKnprwshKWA2c0z9B8gSnuvLi1'
-const LANGUAGE = 'zh-tw'
-
 // style
 const Container = styled.div`
   background-color: ${({ theme }) => theme.backgroundColor};
@@ -47,64 +40,14 @@ const Container = styled.div`
 `
 
 function App() {
-  // state
-  const [currentTheme, setCurrentTheme] = useState('dark')
-  const [currentPage, setCurrentPage] = useState('WeatherCard')
-  const [currentCity, setCurrentCity] = useState(
-    () => localStorage.getItem('city') || '臺北市'
-  )
-  const [currentCityKey, setCurrentCityKey] = useState(
-    () => localStorage.getItem('key') || '315078'
-  )
-
-  //
-  const CONDITION_URL = `https://dataservice.accuweather.com/currentconditions/v1/${currentCityKey}
-?apikey=${AUTHORIZATION_KEY}&details=true&language=${LANGUAGE}`
-  const FORECAST_URL = `https://dataservice.accuweather.com/forecasts/v1/daily/1day/${currentCityKey}
-?apikey=${AUTHORIZATION_KEY}&details=true&metric=true&language=${LANGUAGE}`
-
-  //
-  const handleCurrentCity = ({ locationName, locationKey }) => {
-    setCurrentCity(locationName)
-    setCurrentCityKey(locationKey)
-  }
-  const handleTheme = (type) => {
-    setCurrentTheme(type)
-  }
-
-  //
-  const [currentWeather, fetchData] = useWeatherAPI({
-    FORECAST_URL,
-    CONDITION_URL
-  })
-
-  //
-  const handleCurrentPage = (page) => () => {
-    setCurrentPage(page)
-  }
-  // effect
-  // useEffect(() => {
-  //   setCurrentTheme(moment === 'day' ? 'light' : 'dark')
-  // }, [moment])
+  const themeState = useSelector(selectTheme)
+  const pageState = useSelector(selectPage)
 
   return (
-    <ThemeProvider theme={theme[currentTheme]}>
+    <ThemeProvider theme={theme[themeState.type]}>
       <Container>
-        {currentPage === 'WeatherCard' && (
-          <WeatherCard
-            currentWeather={currentWeather}
-            currentCity={currentCity}
-            onTheme={handleTheme}
-            fetchData={fetchData}
-            onCurrentPage={handleCurrentPage}
-          />
-        )}
-        {currentPage === 'WeatherSetting' && (
-          <WeatherSetting
-            onCurrentPage={handleCurrentPage}
-            onCurrentCity={handleCurrentCity}
-          />
-        )}
+        {pageState.value === 'WeatherCard' && <WeatherCard />}
+        {pageState.value === 'WeatherSetting' && <WeatherSetting />}
       </Container>
     </ThemeProvider>
   )

@@ -11,6 +11,7 @@
     3. custom hook
     4. fetch串接AccuWeather天氣資料
     5. moment處理時間資料
+    6. Redux, RTK
 
 
 ## ✨ Features
@@ -32,3 +33,5 @@
     "normalize.css": "^8.0.1",
     "@emotion/styled": "^11.11.0",
     "moment": "^2.29.4",
+    "@reduxjs/toolkit": "^1.9.7",
+    "react-redux": "^8.1.3",

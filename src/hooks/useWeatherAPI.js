@@ -1,7 +1,13 @@
 // library
 import { useEffect, useState } from 'react'
 
-const fetchCurrentWeather = ({ FORECAST_URL }) => {
+const AUTHORIZATION_KEY = 'sKrX8HgKnprwshKWA2c0z9B8gSnuvLi1'
+const LANGUAGE = 'zh-tw'
+
+const fetchCurrentWeather = ({ currentCityKey }) => {
+  const FORECAST_URL = `https://dataservice.accuweather.com/forecasts/v1/daily/1day/${currentCityKey}
+?apikey=${AUTHORIZATION_KEY}&details=true&metric=true&language=${LANGUAGE}`
+
   return fetch(FORECAST_URL)
     .then((res) => res.json())
     .then((data) => {
@@ -13,7 +19,10 @@ const fetchCurrentWeather = ({ FORECAST_URL }) => {
     })
 }
 
-const fetchWeatherCondition = ({ CONDITION_URL }) => {
+const fetchWeatherCondition = ({ currentCityKey }) => {
+  const CONDITION_URL = `https://dataservice.accuweather.com/currentconditions/v1/${currentCityKey}
+?apikey=${AUTHORIZATION_KEY}&details=true&language=${LANGUAGE}`
+
   return fetch(CONDITION_URL)
     .then((res) => res.json())
     .then((data) => {
@@ -27,7 +36,7 @@ const fetchWeatherCondition = ({ CONDITION_URL }) => {
     })
 }
 
-const useWeatherAPI = ({ FORECAST_URL, CONDITION_URL }) => {
+const useWeatherAPI = ({ currentCityKey }) => {
   // state
   const [currentWeather, setCurrentWeather] = useState({
     locationName: '',
@@ -44,8 +53,8 @@ const useWeatherAPI = ({ FORECAST_URL, CONDITION_URL }) => {
       isLoading: true
     }))
     const [currentWeatherData, conditionData] = await Promise.all([
-      fetchCurrentWeather({ FORECAST_URL }),
-      fetchWeatherCondition({ CONDITION_URL })
+      fetchCurrentWeather({ currentCityKey }),
+      fetchWeatherCondition({ currentCityKey })
     ])
     setTimeout(() => {
       setCurrentWeather({
@@ -58,7 +67,7 @@ const useWeatherAPI = ({ FORECAST_URL, CONDITION_URL }) => {
   // effect
   useEffect(() => {
     fetchData()
-  }, [FORECAST_URL, CONDITION_URL])
+  }, [currentCityKey])
 
   return [currentWeather, fetchData]
 }

@@ -1,7 +1,12 @@
+// tools
 import styled from '@emotion/styled'
 import data from '../utils/AccuWeather/topCity.json'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
+import { useDispatch } from 'react-redux'
+import { switchPage } from '../store/slice/page'
+import { switchLocation } from '../store/slice/location'
 
+// styles
 const WeatherSettingWrapper = styled.div`
   position: relative;
   min-width: 360px;
@@ -93,20 +98,25 @@ const Save = styled.button`
   }
 `
 
-const WeatherSetting = ({ onCurrentPage, onCurrentCity }) => {
+const WeatherSetting = () => {
   const inputLocationRef = useRef(null)
 
   //
   const handleSave = () => {
-    console.log(inputLocationRef.current.value.split(','))
+    // console.log(inputLocationRef.current.value.split(','))
     const currentLocation = inputLocationRef.current.value.split(',')
-    onCurrentCity({
-      locationName: currentLocation[0],
-      locationKey: currentLocation[1]
-    })
+    dispatch(
+      switchLocation({
+        city: currentLocation[0],
+        key: currentLocation[1]
+      })
+    )
     localStorage.setItem('city', currentLocation[0])
     localStorage.setItem('key', currentLocation[1])
   }
+
+  //
+  const dispatch = useDispatch()
 
   //
   return (
@@ -127,7 +137,9 @@ const WeatherSetting = ({ onCurrentPage, onCurrentCity }) => {
       </StyledSelect>
 
       <ButtonGroup>
-        <Back onClick={onCurrentPage('WeatherCard')}>返回</Back>
+        <Back onClick={() => dispatch(switchPage({ value: 'WeatherCard' }))}>
+          返回
+        </Back>
         <Save onClick={handleSave}>儲存</Save>
       </ButtonGroup>
     </WeatherSettingWrapper>

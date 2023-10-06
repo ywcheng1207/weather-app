@@ -1,7 +1,10 @@
+// tools
 import { useEffect, useMemo, useState } from 'react'
 import styled from '@emotion/styled'
+import { useDispatch } from 'react-redux'
+import { onTheme } from '../store/slice/theme'
 
-// icon
+// icons
 import { ReactComponent as DayCloudy } from './../images/day-cloudy.svg'
 import { ReactComponent as DayThunderstorm } from './../images/day-thunderstorm.svg'
 import { ReactComponent as DayClear } from './../images/day-clear.svg'
@@ -24,6 +27,7 @@ const IconContainer = styled.div`
     max-height: 110px;
   }
 `
+
 const weatherTypes = {
   isThunderstorm: [15, 16, 17, 41, 42],
   isClear: [1, 2, 3, 30, 31, 32, 33, 34],
@@ -56,26 +60,28 @@ const weatherIcons = {
 
 const weatherCodeToType = (weatherCode) => {
   const [weatherType] =
-    Object.entries(weatherTypes).find(([weatherType, weatherCodes]) =>
+    Object.entries(weatherTypes).find(([weatherCodes]) =>
       weatherCodes.includes(Number(weatherCode))
     ) || []
   return weatherType
 }
 
-const WeatherIcon = ({ weatherCode, moment, onTheme }) => {
+const WeatherIcon = ({ weatherCode, moment }) => {
   const [weatherIcon, setWeatherIcon] = useState()
   const weatherType = useMemo(
     () => weatherCodeToType(weatherCode),
     [weatherCode]
   )
+  const dispatch = useDispatch()
+
   useEffect(() => {
     if (moment) {
       if (moment.split(' ').includes('pm')) {
         setWeatherIcon(weatherIcons.night[weatherType])
-        onTheme('dark')
+        dispatch(onTheme({ type: 'dark' }))
       } else {
         setWeatherIcon(weatherIcons.day[weatherType])
-        onTheme('light')
+        dispatch(onTheme({ type: 'light' }))
       }
     }
   }, [moment])
